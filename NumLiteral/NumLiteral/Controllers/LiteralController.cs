@@ -9,7 +9,7 @@ namespace NumLiteral.Controllers
     [ApiController]
     [Route("api/[controller]")]
     //  EN EL BUSCADOR ->  api/Literal?n=   luego del '=' se coloca el número
-    public class Literal : Controller
+    public class LiteralController : Controller
     {
         private string Millones(char n)
         {
@@ -127,7 +127,7 @@ namespace NumLiteral.Controllers
         // Comienza GET
 
         [HttpGet]
-        public string NumGet(string n)
+        public string NumeroGet(string n)
         {
             string respuesta = "";
             if (n.Length > 7)
@@ -196,9 +196,9 @@ namespace NumLiteral.Controllers
                         respuesta += "y ";
                     }
                     respuesta += Unidades(n[2]);
-                        respuesta += "mil ";
-                    
-                    
+                    respuesta += "mil ";
+
+
                 }
 
                 respuesta += Cientos(n[3]);
@@ -332,12 +332,12 @@ namespace NumLiteral.Controllers
             }// Termina 2 dígitos
 
             if (n.Length == 1)
-            { 
+            {
                 respuesta += Unidades(n[0]);
-                if(n[0] == '0')
+                if (n[0] == '0')
                 {
                     respuesta += "Cero";
-                }    
+                }
 
 
             }// Termina 1 dígitos
@@ -346,3 +346,4 @@ namespace NumLiteral.Controllers
 
     } //Fin del Literal:Controller
 } // Fin del programa completo
+
